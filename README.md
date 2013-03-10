@@ -1,4 +1,4 @@
-gravifile
+Gravifile
 =========
 
 A organization management tool
