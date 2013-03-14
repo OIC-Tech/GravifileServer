@@ -1,0 +1,16 @@
+package com.louishong.database;
+
+import java.sql.SQLException;
+
+class Tester {
+
+	public static void main(String args[]) {
+		ProfileWrapper pw = new ProfileWrapper();
+		try {
+			System.out.println(pw.getUserPoint("Louis"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

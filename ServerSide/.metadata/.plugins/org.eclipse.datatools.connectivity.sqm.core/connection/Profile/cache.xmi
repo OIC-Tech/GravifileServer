@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:SQLSchema="http:///org/eclipse/datatools/modelbase/sql/schema.ecore">
+  <SQLSchema:Database name="Profile" vendor="SQLITE" version="3.5.9" catalogs="/1">
+    <eAnnotations source="ConnectionURI">
+      <details key="ConnectionKey" value="Profile"/>
+    </eAnnotations>
+  </SQLSchema:Database>
+  <SQLSchema:Catalog name="" Database="/0" schemas="/2"/>
+  <SQLSchema:Schema name="DEFAULT" Catalog="/1"/>
+</xmi:XMI>

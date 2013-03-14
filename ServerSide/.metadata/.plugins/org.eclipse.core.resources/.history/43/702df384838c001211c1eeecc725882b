@@ -1,0 +1,37 @@
+package com.louishong.database;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ProfileWrapper {
+	public static String sDriver = "org.sqlite.JDBC";
+	public static String sUrl = "jdbc:sqlite:/Users/honglouis/Documents/ServerWorkspace/Gravifile/src/com/louishong/database/Profiles.sqlite";
+	public static SQliteBase sqlBase = new SQliteBase(sDriver, sUrl);
+
+	static String getLastName(String name) {
+		ResultSet results = sqlBase.executeQuery("SELECT * FROM Profiles");
+
+		String resultName;
+		String resultLastName;
+		String resultUserPoint;
+		String resultEmail;
+		String resultGender;
+		String resultIsMember;
+		
+		try {
+
+			while (results.next()) {
+				resultName = results.getString("FirstName");
+				if (resultName.equals(name)) {
+					return
+					
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

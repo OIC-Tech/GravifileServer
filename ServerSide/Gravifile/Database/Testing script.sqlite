@@ -1,0 +1,4 @@
+DELETE FROM Persons WHERE P_ID NOT IN
+    (SELECT MAX(P_ID) FROM Persons GROUP BY Lastname);
+    
+SELECT * FROM persons;
