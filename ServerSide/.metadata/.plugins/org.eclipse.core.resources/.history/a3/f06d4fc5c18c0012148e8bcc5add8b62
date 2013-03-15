@@ -1,0 +1,13 @@
+package com.louishong.database;
+
+import com.louishong.gravifile.ProfileWrapper;
+
+class Tester {
+
+	public static void main(String args[]) {
+		ProfileWrapper pw = new ProfileWrapper();
+		
+		System.out.println(pw.hasUser("Louis"));
+	}
+
+}

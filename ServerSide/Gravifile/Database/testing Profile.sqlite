@@ -1,4 +1,0 @@
-insert into Persons values(1, "Hong", "Louis", 16);
-insert into Persons values(2, "Liu", "Dali", 16);
-insert into Persons values(3, "Xie", "Subrina", 16);
-insert into Persons values(4, "Wei", "William", 17);

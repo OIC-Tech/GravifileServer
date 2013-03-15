@@ -1,0 +1,11 @@
+package com.louishong.database;
+
+
+class Tester {
+
+	public static void main(String args[]) {
+		
+		System.out.println(ProfileWrapper.hasUser("Louis"));
+	}
+
+}

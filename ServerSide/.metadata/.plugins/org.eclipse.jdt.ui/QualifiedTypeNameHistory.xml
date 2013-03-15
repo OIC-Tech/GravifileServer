@@ -18,4 +18,6 @@
 <fullyQualifiedTypeName name="com.louishong.database.ProfileReader"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.louishong.database.ProfileWrapper"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 </qualifiedTypeNameHistroy>
