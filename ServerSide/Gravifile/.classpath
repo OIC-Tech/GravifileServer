@@ -8,7 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Users/honglouis/Documents/gravifile/ServerSide/Gravifile/WebContent/WEB-INF/lib/sqlite-jdbc-3.7.2.jar"/>
-	<classpathentry kind="lib" path="/Users/honglouis/Documents/gravifile/ServerSide/Gravifile/WebContent/WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/honglouis/gravifile/ServerSide/Gravifile/WebContent/WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/honglouis/gravifile/ServerSide/Gravifile/WebContent/WEB-INF/lib/sqlite-jdbc-3.7.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
