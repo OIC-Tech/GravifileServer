@@ -8,7 +8,7 @@ public class ProfileWrapper {
 	public static String sUrl = "jdbc:sqlite:/Users/honglouis/Documents/ServerWorkspace/Gravifile/src/com/louishong/database/Profiles.sqlite";
 	public static SQliteBase sqlBase = new SQliteBase(sDriver, sUrl);
 
-	String getLastName(String name) {
+	public static String getLastName(String name) {
 		ResultSet results = sqlBase.executeQuery("SELECT * FROM Profiles");
 
 		String resultName;
@@ -27,7 +27,7 @@ public class ProfileWrapper {
 		return null;
 	}
 
-	String getUserPoint(String name) {
+	public static String getUserPoint(String name) {
 		ResultSet results = sqlBase.executeQuery("SELECT * FROM Profiles");
 
 		String resultName;
@@ -46,7 +46,7 @@ public class ProfileWrapper {
 		return null;
 	}
 
-	String getEmail(String name) {
+	public static String getEmail(String name) {
 		ResultSet results = sqlBase.executeQuery("SELECT * FROM Profiles");
 
 		String resultName;
@@ -65,7 +65,7 @@ public class ProfileWrapper {
 		return null;
 	}
 
-	String getGender(String name) {
+	public static String getGender(String name) {
 		ResultSet results = sqlBase.executeQuery("SELECT * FROM Profiles");
 
 		String resultName;
@@ -84,7 +84,7 @@ public class ProfileWrapper {
 		return null;
 	}
 
-	String getIsMember(String name) {
+	public static String getIsMember(String name) {
 		ResultSet results = sqlBase.executeQuery("SELECT * FROM Profiles");
 
 		String resultName;
@@ -104,7 +104,7 @@ public class ProfileWrapper {
 		return null;
 	}
 
-	Boolean hasUser(String name) {
+	public static Boolean hasUser(String name) {
 		ResultSet results = sqlBase.executeQuery("SELECT * FROM Profiles");
 
 		String resultName;
