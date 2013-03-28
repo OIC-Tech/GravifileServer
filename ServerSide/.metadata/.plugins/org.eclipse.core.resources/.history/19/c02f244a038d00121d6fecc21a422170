@@ -1,9 +1,0 @@
-package com.louishong.gravifile;
-
-public class Tester {
-
-	void main(String args[]) {
-		System.out.println(ProfileWrapper.getLastName("Louis"));
-	}
-	
-}

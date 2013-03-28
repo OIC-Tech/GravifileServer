@@ -1,0 +1,7 @@
+CREATE TABLE Profiles(
+	ChineseName text,
+	UserJob text,
+	Email text,
+	UserPoints Integer,
+	UserPhone text
+)

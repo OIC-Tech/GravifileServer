@@ -18,29 +18,39 @@ public class GravifileServlet extends HttpServlet
 	 * 
 	 */
 	private static final long serialVersionUID = -5265128452538012292L;
-	String httpMethod = "GET";
 	PrintWriter out;
 
 	protected String printDocument(String firstName) throws IOException
 	{
+		if (firstName == null) {
+			firstName = "";
+		}
 		//Initialize variables
-		String lastName = null;
-		String userPoint = null;
+		firstName = new String(firstName.getBytes("ISO-8859-1"),"UTF-8");
+		String userJob = ProfileWrapper.getUserJob(firstName);
+		String userPoint = ProfileWrapper.getUserPoint(firstName);
 		
-		//Check if firstName parameter is empty or not
+
+		//Check if userJob, userPoint first name is not empty
+		if ((userJob == "") || (userJob == null))
+		{
+			userJob = "未找到用户姓名信息";
+		}
+		if ((userPoint == "") || (userPoint == null)) {
+			userPoint = "未找到用户分数息";
+		}
 		if ((firstName == "") || (firstName == null) || !(ProfileWrapper.hasUser(firstName)))
 		{
-			
 			firstName = "未找到用户";
 		}
 		
 		//get HTML from localhost
 		BufferedReader bufferedReader;
-		String line = null;
+		String line = "";
 		String outputString = "";
 
 		//Read from the file
-		bufferedReader = new BufferedReader(new InputStreamReader(new URL("http://localhost/htmldoc/gravifile/gravifile.html").openStream()));
+		bufferedReader = new BufferedReader(new InputStreamReader(new URL("http://localhost/htmldoc/gravifile/gravifile.html").openStream(), "UTF-8"));
  
 		while(!((line = bufferedReader.readLine()) == null))
 		{
@@ -48,20 +58,9 @@ public class GravifileServlet extends HttpServlet
 		}
 		
 		//Search for last name and user points
-		lastName = ProfileWrapper.getLastName(firstName);
-		userPoint = ProfileWrapper.getUserPoint(firstName);
-		
-		//Check if lastName and userPoint is not empty
-		if ((lastName == "") || (lastName == null))
-		{
-			lastName = "未找到用户姓名信息";
-		}
-		if ((userPoint == "") || (userPoint == null)) {
-			userPoint = "未找到用户分数息";
-		}
 
 		//Output the html
-		return String.format(outputString, firstName, lastName, userPoint);
+		return String.format(outputString, firstName, userJob, userPoint);
 		
 	}
 
@@ -76,29 +75,26 @@ public class GravifileServlet extends HttpServlet
 			e1.printStackTrace();
 		} 
 		
-		PrintWriter out = null;
 		try
 		{
 			out = response.getWriter();
 		} catch (IOException e)
 		{
 			e.printStackTrace();
+			return;
 		}
 		try
 		{
-			out.print(printDocument(request.getParameter("firstName")));
+			out.print(printDocument(request.getParameter("name")));
 		} catch (IOException e)
 		{
 			out.print("Document Not Found!");
 		}
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	{
-		httpMethod = "POST";
 		doGet(request, response);
-		httpMethod = "GET";
 	}
 
 }

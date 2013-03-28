@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="Extract/Load file format wizard page">
+		<item value="/Users/honglouis/Desktop/Profiles.data" key="File path"/>
+		<item value="&apos;" key="String delimiter"/>
+		<item value="true" key="Replace data"/>
+		<item value="Comma" key="Column delimiter"/>
+	</section>
 </section>

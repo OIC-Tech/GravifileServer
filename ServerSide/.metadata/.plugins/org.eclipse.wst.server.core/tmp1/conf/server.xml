@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="/Gravifile/ServerSide/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/Gravifile" path="/Gravifile" reloadable="true" source="org.eclipse.jst.jee.server:Gravifile"/><Context docBase="/Gravifile/ServerSide/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/OICHome" path="" reloadable="true" source="org.eclipse.jst.jee.server:OICHome"/><Context docBase="/Users/honglouis/Documents/ServerWorkspace/Servers/images" path="/images"/><Context docBase="/Users/honglouis/Documents/ServerWorkspace/Servers/htmldoc" path="/htmldoc"/></Host>
+      <Context docBase="/usr/local/apache-tomcat-7.0.37/webapps/OICHome" path="" reloadable="true" source="org.eclipse.jst.jee.server:OICHome"/><Context docBase="/usr/local/apache-tomcat-7.0.37/webapps/Gravifile" path="/Gravifile" reloadable="true" source="org.eclipse.jst.jee.server:Gravifile"/><Context docBase="/Gravifile/ServerSide/Servers/htmldoc" path="/htmldoc" reloadable="true"/><Context docBase="/Gravifile/ServerSide/Servers/images" path="/images" reloadable="true"/></Host>
     </Engine>
   </Service>
 </Server>

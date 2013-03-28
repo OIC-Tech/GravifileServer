@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Gravifile">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="servlet-api.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/Gravifile/WebContent/WEB-INF/lib/servlet-api.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sqlite-jdbc-3.7.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/Gravifile/WebContent/WEB-INF/lib/sqlite-jdbc-3.7.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="servlet-api.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/Gravifile/WebContent/WEB-INF/lib/servlet-api.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/Gravifile/build/classes"/>
+        <property name="context-root" value="Gravifile"/>
+    </wb-module>
+</project-modules>
