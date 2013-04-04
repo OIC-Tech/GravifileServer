@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 
-import com.louishong.database.ProfileWrapper;
-
 
 @WebServlet("/")
 public class GravifileServlet extends HttpServlet
@@ -20,30 +18,8 @@ public class GravifileServlet extends HttpServlet
 	private static final long serialVersionUID = -5265128452538012292L;
 	PrintWriter out;
 
-	protected String printDocument(String firstName) throws IOException
+	protected String printDocument() throws IOException
 	{
-		if (firstName == null) {
-			firstName = "";
-		}
-		//Initialize variables
-		firstName = new String(firstName.getBytes("ISO-8859-1"),"UTF-8");
-		String userJob = ProfileWrapper.getUserJob(firstName);
-		String userPoint = ProfileWrapper.getUserPoint(firstName);
-		
-
-		//Check if userJob, userPoint first name is not empty
-		if ((userJob == "") || (userJob == null))
-		{
-			userJob = "未找到用户姓名信息";
-		}
-		if ((userPoint == "") || (userPoint == null)) {
-			userPoint = "未找到用户分数息";
-		}
-		if ((firstName == "") || (firstName == null) || !(ProfileWrapper.hasUser(firstName)))
-		{
-			firstName = "未找到用户";
-		}
-		
 		//get HTML from localhost
 		BufferedReader bufferedReader;
 		String line = "";
@@ -60,7 +36,7 @@ public class GravifileServlet extends HttpServlet
 		//Search for last name and user points
 
 		//Output the html
-		return String.format(outputString, firstName, userJob, userPoint);
+		return outputString;
 		
 	}
 
@@ -78,17 +54,11 @@ public class GravifileServlet extends HttpServlet
 		try
 		{
 			out = response.getWriter();
+			out.println(printDocument());
 		} catch (IOException e)
 		{
 			e.printStackTrace();
 			return;
-		}
-		try
-		{
-			out.print(printDocument(request.getParameter("name")));
-		} catch (IOException e)
-		{
-			out.print("Document Not Found!");
 		}
 	}
 

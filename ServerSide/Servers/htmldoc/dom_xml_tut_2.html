@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 大理这是我的教程 -->
+
+<!-- 这行代码从我们的服务器加载一个JS. 你可以通过这个连接看看他的内容 -->
+<script src="http://www.oic.name/js/loadxmldoc.js"></script>
+
+<script>
+function buttonClicked(url) {
+
+xmlFunction = function() 
+{
+	xhttp.onreadystatechange=function()
+  {
+  if (xhttp.readyState==4 && xhttp.status==200)
+    {
+        xmlDoc = xhttp.responseXML;
+		profileName = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+		profileJob = xmlDoc.getElementsByTagName("job")[0].childNodes[0].nodeValue;
+		profilePoints = xmlDoc.getElementsByTagName("points")[0].childNodes[0].nodeValue;
+		
+		//将String的内容写进相对应的HTML里面
+		document.getElementById("name").innerHTML = profileName;
+		document.getElementById("job").innerHTML = profileJob;
+		document.getElementById("points").innerHTML = profilePoints;	
+    }
+  }
+
+}
+
+loadXMLDoc(url, xmlFunction);
+
+
+
+}
+
+</script>
+<meta charset="GB2312">
+</head>
+<body>
+<!--
+下面这个loadXMLDoc Function是来自 http://www.oic.name/js/loadxmldoc.js 
+这个连接其实是http://www.oic.name/Gravifile/Search?name=刘加华
+-->
+<button onclick="buttonClicked('http://www.oic.name/Gravifile/Search?name=%E5%88%98%E5%8A%A0%E5%8D%8E')">Magic Button</button>
+<p>
+Name: <div id="name"></div>
+<p>
+Job: <div id="job"></div>
+<p>
+Points: <div id="points"></div>
+</body>
+</html>
+
+<!-- 
+（1）这里面不知道你有没有突然想起来onreadystatechange。就是那个里面有个Function的variable。
+为什么这里没有？其实这个是个不好的例子，因为我在loadxmldoc里面设置的是xhttp.open("GET",url,*false*);
+这个false是什么呢？
+
+w3school解释：Async=false ： JavaScript will NOT continue to execute, until the server response is ready.
+ If the server is busy or slow, the application will hang or stop.
+ 
+ 也就是说，当 loadXMLDoc function 里面 return xhttp.responseXML运行时,JS就会停止运行等待服务器把数据传回来。
+ 
+所以我可以把本应该写在 onreadystatechange 的代码直接写到 xmlDoc = loadXMLDoc(url);底下。
+
+但是这个用法有个弊端，就是当服务器崩溃会出问题时，如果那个XML一直没有发过来，网页JS就会卡到那里不继续运行！
+我以后做个好的例子就是把提取XML内容和写入HTML的内容写进 onreadystatechange里面。这样及时服务器慢点，还没
+有穿过来XML，网页的JS也不会卡在那里等待。而是当等待服务器传回文件的时候再运行那串代码。
+
+具体的请看：http://www.w3schools.com/dom/dom_httprequest.asp
+
+ -->

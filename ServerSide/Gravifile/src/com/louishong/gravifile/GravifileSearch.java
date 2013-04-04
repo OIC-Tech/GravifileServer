@@ -26,12 +26,15 @@ import com.louishong.database.ProfileWrapper;
 public class GravifileSearch extends HttpServlet {
 
     /**
+     * 
+     */
+    private static final long serialVersionUID = -6655222082981235150L;
+    /**
 	 * 
 	 */
-    private static final long serialVersionUID = 1L;
     PrintWriter out;
 
-    String createXML(String userName) {
+    protected static String createXML(String userName) {
 	
 	if (userName == null) {
 	    userName = "";
@@ -61,12 +64,14 @@ public class GravifileSearch extends HttpServlet {
 
 	// Search Information in the Database
 	
-	    String userJob = "没有找到用户职位信息";
-	    String userPoints = "没有找到用户积分信息";
+	    String userJob = "";
+	    String userPoints = "";
 	if (ProfileWrapper.hasUser(userName)) {
 	    userJob = ProfileWrapper.getUserJob(userName);
 	    userPoints = ProfileWrapper.getUserPoint(userName);
-	} 
+	} else {
+	    userName = "";
+	}
 
 	// Create XML
 
@@ -97,7 +102,7 @@ public class GravifileSearch extends HttpServlet {
 	xmlJob.appendChild(textJob);
 
 	// Make Points node
-	Element xmlPoints = exportDoc.createElement("Points");
+	Element xmlPoints = exportDoc.createElement("points");
 	xmlRoot.appendChild(xmlPoints);
 	
 	//Fill in Points node
