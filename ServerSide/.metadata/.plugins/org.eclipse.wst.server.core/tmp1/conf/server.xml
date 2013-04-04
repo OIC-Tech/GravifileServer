@@ -124,7 +124,11 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="/usr/local/apache-tomcat-7.0.37/webapps/OICHome" path="" reloadable="true" source="org.eclipse.jst.jee.server:OICHome"/><Context docBase="/usr/local/apache-tomcat-7.0.37/webapps/Gravifile" path="/Gravifile" reloadable="true" source="org.eclipse.jst.jee.server:Gravifile"/><Context docBase="/Gravifile/ServerSide/Servers/htmldoc" path="/htmldoc" reloadable="true"/><Context docBase="/Gravifile/ServerSide/Servers/images" path="/images" reloadable="true"/></Host>
+      <Context docBase="/OIC/ServerSide/Servers/htmldoc" path="" reloadable="true"/>
+      <Context docBase="/OIC/ServerSide/Servers/images" path="/images" reloadable="true"/>
+      <Context docBase="/OIC/ServerSide/Servers/js" path="/js" reloadable="true"/>
+      <Context docBase="/usr/local/apache-tomcat-7.0.37/webapps/GravifileServer" path="/gravifile/server" reloadable="true" source="org.eclipse.jst.jee.server:GravifileServer"/>
+    </Host>
     </Engine>
   </Service>
 </Server>
