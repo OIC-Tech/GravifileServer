@@ -4717,3 +4717,218 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.jst.server.tomcat.core 4 0 2013-04-05 03:15:22.099
 !MESSAGE Several ports (80, 8009) required by OIC Server are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+!SESSION 2013-04-05 18:05:21.665 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.osgi 2 1 2013-04-05 20:22:28.772
+!MESSAGE NLS unused message: CacheManager_CannotLoadNonUrlLocation in: org.eclipse.equinox.internal.p2.repository.messages
+!SESSION 2013-04-06 02:12:56.944 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.jobs 4 2 2013-04-06 02:53:05.490
+!MESSAGE An internal error occurred during: "Starting OIC Server".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getLaunchManager(LaunchConfiguration.java:462)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:865)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:697)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3537)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3473)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:367)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2013-04-06 02:53:15.153 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:15.488
+!MESSAGE Error creating SQL Model Connection connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:15.501
+!MESSAGE Error creating SQLite Connection Factory connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2013-04-06 03:21:16.397
+!MESSAGE Could not connect to Gravifile Profiles.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:16.397
+!MESSAGE Error creating SQL Model Connection connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:16.397
+!MESSAGE Error creating SQLite Connection Factory connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:20.520
+!MESSAGE Error creating SQL Model Connection connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:20.521
+!MESSAGE Error creating SQLite Connection Factory connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2013-04-06 03:21:21.461
+!MESSAGE Could not connect to Gravifile Profiles.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:21.461
+!MESSAGE Error creating SQL Model Connection connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2013-04-06 03:21:21.461
+!MESSAGE Error creating SQLite Connection Factory connection to Gravifile Profiles. (Error: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist)
+!STACK 0
+java.sql.SQLException: path to '/Gravifile/ServerSide/Servers/db/Profiles.sqlite': '/Gravifile' does not exist
+	at org.sqlite.Conn.open(Conn.java:103)
+	at org.sqlite.Conn.<init>(Conn.java:57)
+	at org.sqlite.JDBC.createConnection(JDBC.java:77)
+	at org.sqlite.JDBC.connect(JDBC.java:64)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:214)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:73)
+	at org.eclipse.datatools.enablement.sqlite.connection.SQLITEJDBCConnectionFactory.createConnection(SQLITEJDBCConnectionFactory.java:35)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
