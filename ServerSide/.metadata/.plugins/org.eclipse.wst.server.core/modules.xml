@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<modules>
-  <module moduleId="org.eclipse.jst.jee.server:GravifileServer" serverId="Testing Server Tomcat 7.0 at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:OICHome" serverId="Testing Server Tomcat 7.0 at localhost"/>
-</modules>

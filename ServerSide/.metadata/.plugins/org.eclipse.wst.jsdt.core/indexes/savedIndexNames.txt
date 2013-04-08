@@ -1,6 +1,0 @@
-INDEX VERSION 1.122+/OIC/ServerSide/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-2196652018.index
-3563991298.index
-3364008470.index
-595587880.index
-1498013899.index
