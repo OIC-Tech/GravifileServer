@@ -83,7 +83,8 @@ public class GravifileUserList extends HttpServlet {
 
 	// Search Information in the Database
 
-	Map<String, ArrayList<String>> userList = ProfileWrapper.getUserList();
+	ProfileWrapper profileWrapper = new ProfileWrapper();
+	Map<String, ArrayList<String>> userList = profileWrapper.getUserList();
 
 	// Create XML
 

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -66,12 +67,28 @@ public class GravifileSearch extends HttpServlet {
 	
 	    String userJob = "";
 	    String userPoints = "";
-	if (ProfileWrapper.hasUser(userName)) {
-	    userJob = ProfileWrapper.getUserJob(userName);
-	    userPoints = ProfileWrapper.getUserPoint(userName);
-	} else {
-	    userName = "";
-	}
+	    ProfileWrapper profileWrapper;
+		try {
+			profileWrapper = new ProfileWrapper();
+			if (profileWrapper.hasUser(userName)) {
+				userJob = profileWrapper.getUserJob(userName);
+				userPoints = profileWrapper.getUserPoint(userName);
+			} else {
+				userName = "";
+			}
+		} catch (InstantiationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 	// Create XML
 
