@@ -34,6 +34,7 @@ public class GravifileSearch extends HttpServlet {
 	 * 
 	 */
     PrintWriter out;
+    static ProfileWrapper profileWrapper;
 
     protected static String createXML(String userName) {
 	
@@ -67,7 +68,6 @@ public class GravifileSearch extends HttpServlet {
 	
 	    String userJob = "";
 	    String userPoints = "";
-	    ProfileWrapper profileWrapper;
 		try {
 			profileWrapper = new ProfileWrapper();
 			if (profileWrapper.hasUser(userName)) {
@@ -77,17 +77,15 @@ public class GravifileSearch extends HttpServlet {
 				userName = "";
 			}
 		} catch (InstantiationException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IllegalAccessException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 	// Create XML

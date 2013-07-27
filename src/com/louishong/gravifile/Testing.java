@@ -3,7 +3,6 @@ package com.louishong.gravifile;
 public class Testing {
 
     public Testing() {
-	// TODO Auto-generated constructor stub
     }
 
     /**
@@ -13,7 +12,6 @@ public class Testing {
 	try {
 	    System.out.println(GravifileUserList.createXML());
 	} catch (Exception e) {
-	    // TODO Auto-generated catch block
 	    e.printStackTrace();
 	}
 
