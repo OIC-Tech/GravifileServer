@@ -1,18 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=GB18030"
-    pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB18030">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Gravifile - Login</title>
 </head>
 <body>
-You're current IP: <%=request.getRemoteAddr() %>
-<form action="/LoginAuth" method="post">
-<input name="username" placeholder="Username" type="text"/><br/>
-<input name="password" placeholder="Password" type="password"/><br/>
-<input name="submit" value="Login" type="button"/><br/>
+	You're current IP:
+	<%=request.getRemoteAddr()%><br />
+	<%
+		String msg = (String) request.getAttribute("msg");
+		try {
+			if (!msg.equals(null)) {
+	%>
+	<%=msg%><br />
+	<%
+		}
+		} catch (NullPointerException e) {
+		}
+	%>
 
-</form>
+	<form action="LoginAuth" method="post">
+		<input name="username" placeholder="Username" type="text" /><br /> <input
+			name="password" placeholder="Password" type="password" /><br /> <input
+			name="submit" value="Login" type="submit" /><br />
+	</form>
 </body>
 </html>

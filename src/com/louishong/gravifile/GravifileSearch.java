@@ -67,12 +67,12 @@ public class GravifileSearch extends HttpServlet {
 	// Search Information in the Database
 	
 	    String userJob = "";
-	    String userPoints = "";
+	    int userPoints = 0;
 		try {
 			profileWrapper = new ProfileWrapper();
 			if (profileWrapper.hasUser(userName)) {
-				userJob = profileWrapper.getUserJob(userName);
-				userPoints = profileWrapper.getUserPoint(userName);
+				userJob = profileWrapper.getJob(userName);
+				userPoints = profileWrapper.getPoints(userName);
 			} else {
 				userName = "";
 			}
@@ -121,7 +121,7 @@ public class GravifileSearch extends HttpServlet {
 	xmlRoot.appendChild(xmlPoints);
 	
 	//Fill in Points node
-	Text textPoints = exportDoc.createTextNode(userPoints);
+	Text textPoints = exportDoc.createTextNode(new Integer(userPoints).toString());
 	xmlPoints.appendChild(textPoints);
 
 	// Output Document

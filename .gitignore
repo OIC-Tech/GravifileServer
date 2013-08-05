@@ -4,3 +4,11 @@
 .settings/org.eclipse.wst.ws.service.policy.prefs
 
 DBConnector/database.properties
+
+*.jar
+
+.settings/org.eclipse.core.resources.prefs
+
+*.jar
+
+WebContent/WEB-INF/lib/IBGDatabaseConnector.jar
