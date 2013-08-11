@@ -28,23 +28,34 @@ public class TeachIBG extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 
-		String teach_input = new String(request.getParameter("teach_input").getBytes("ISO-8859-1"), "UTF-8");
-		String teach_response = new String(request.getParameter("teach_response").getBytes("ISO-8859-1"), "UTF-8");
-
 		PrintWriter out = response.getWriter();
+		try {
+		if (!(Boolean) request.getSession().getAttribute("alphaPerm")) {
+			out.print("你已经登出或者没有封测权限");
+			return;
+		} 
+		} catch (NullPointerException e) {
+			out.print("你已经登出或者没有封测权限");
+			return;
+		}
+		
+		String teach_input = request.getParameter("teach_input");
+		String teach_response = request.getParameter("teach_response");
+		String username = (String) request.getSession().getAttribute("username");
+
 
 		GravifileAIDatabase gravifileAI = null;
 		try {
 			gravifileAI = new GravifileAIDatabase();
 
 			if (gravifileAI.isUnique(teach_input, teach_response, false)) {
-				gravifileAI.addConversation(teach_input, teach_response, false);
-				out.println("Your response has been added to the Database!");
+				gravifileAI.addConversation(teach_input, teach_response, false, false, false, username);
+				out.println("G器人学会了新的回答!");
 			} else {
-				out.println("Your reponse already exists!");
+				out.println("G器人学过这个回答");
 			}
 		} catch (Exception e) {
-			out.println("Server Error: " + e.getMessage());
+			out.println("服务器内部错误: " + e.getMessage());
 			e.printStackTrace();
 		} finally {
 			try {

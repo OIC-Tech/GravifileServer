@@ -3,15 +3,14 @@ package com.louishong.gravifile;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import javax.xml.parsers.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -19,7 +18,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
 
 import com.louishong.database.ProfileWrapper;
 
@@ -42,12 +43,7 @@ public class GravifileSearch extends HttpServlet {
 	    userName = "";
 	}
 	
-	try {
-	    userName = new String(userName.getBytes("ISO-8859-1"),"UTF-8");
-	    System.out.println(userName);
-	} catch (UnsupportedEncodingException e1) {
-	    e1.printStackTrace();
-	}
+	System.out.println(userName);
 
 	// Create Document
 	DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
@@ -66,6 +62,7 @@ public class GravifileSearch extends HttpServlet {
 
 	// Search Information in the Database
 	
+		String nickName = "";
 	    String userJob = "";
 	    int userPoints = 0;
 		try {
@@ -73,18 +70,11 @@ public class GravifileSearch extends HttpServlet {
 			if (profileWrapper.hasUser(userName)) {
 				userJob = profileWrapper.getJob(userName);
 				userPoints = profileWrapper.getPoints(userName);
+				nickName = profileWrapper.getNickName(userName);
 			} else {
 				userName = "";
 			}
-		} catch (InstantiationException e1) {
-			e1.printStackTrace();
-		} catch (IllegalAccessException e1) {
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -104,8 +94,8 @@ public class GravifileSearch extends HttpServlet {
 	Element xmlName = exportDoc.createElement("name");
 	xmlRoot.appendChild(xmlName);
 	
-	//FIll in Name node
-	Text textName = exportDoc.createTextNode(userName);
+	//Fill in Name node
+	Text textName = exportDoc.createTextNode(nickName);
 	xmlName.appendChild(textName);
 
 	// Make Job node

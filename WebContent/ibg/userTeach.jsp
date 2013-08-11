@@ -3,15 +3,19 @@
 
 <%
 	try {
-		if (session.getAttribute("authed").equals(false)) {
-			response.sendRedirect("login.jsp?redirect="
-					+ request.getRequestURL().toString());
+		boolean authed = (Boolean) session.getAttribute("authed");
+		boolean permision = (Boolean) session.getAttribute("alphaPerm");
+
+		if (!authed) {
+			throw new NullPointerException();
+		}
+		if (!permision) {
+			request.setAttribute("msg", "对不起~这个服务暂时只有内测资格的账户才能使用");
+			request.getRequestDispatcher("../account/AlphaRegister.jsp").forward(request, response);
 		}
 	} catch (NullPointerException e) {
-		response.sendRedirect("login.jsp?redirect="
-				+ request.getRequestURL().toString());
+		response.sendRedirect("../account/login.jsp");
 	}
-
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -19,6 +23,8 @@
 
 <head>
 <title>IBG - 教G器人说话 (。_。)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css"
 	href="./userteach_files/style.css">
 
@@ -222,7 +228,7 @@ body {
 }
 </style>
 
-<script src="../../js/loadxmldoc.js"></script>
+<script src="/js/loadxmldoc.js"></script>
 <script>
 	function sendLesson(url) {
 		xmlFunction = function() {
@@ -234,8 +240,6 @@ body {
 		}
 		loadXMLDoc(encodeURI(url), xmlFunction);
 	}
-	
-	
 </script>
 
 </head>
@@ -258,7 +262,7 @@ body {
 			cols="10" placeholder="因为吸血鬼怕十字架……＜（￣︶￣）／" tabindex="2"></textarea>
 		<br /> <input type="submit" name="submit" id="submit" value="教给G器人!!"
 			tabindex="3"
-			onmouseup="sendLesson('ibg/TeachIBG?teach_input=' + teach_input.value + '&teach_response=' + teach_response.value)" />
+			onmouseup="sendLesson('TeachIBG?teach_input=' + teach_input.value + '&teach_response=' + teach_response.value)" />
 
 	</div>
 
